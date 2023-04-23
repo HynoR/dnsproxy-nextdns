@@ -95,7 +95,7 @@ main(){
 nextdns(){
     main
     wget -O /etc/systemd/system/dnsproxy.service https://raw.githubusercontent.com/9bingyin/Fast-DoH/master/services/nextdns.service
-	read -p "NextDNS ID：" query
+    read -p "NextDNS ID：" query
     sed -i "s|dns-query|${query}|g" /etc/systemd/system/dnsproxy.service
     systemctl daemon-reload
     systemctl restart dnsproxy
