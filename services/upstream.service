@@ -6,9 +6,9 @@ Wants=
 Requires=
 
 [Service]
-ExecStart=/usr/bin/dnsproxy -l 127.0.0.1 -p 5335 -u https://8.8.4.4/dns-query -u https://8.8.8.8/dns-query -u https://9.9.9.11/dns-query --fastest-addr
+ExecStart=/usr/bin/dnsproxy -l 127.0.0.1 -p 5335 -u https://8.8.4.4/dns-query -u https://1.1.1.1/dns-query -u https://9.9.9.11/dns-query --fastest-addr
 ExecStop=
-ExecReload=/usr/bin/dnsproxy -l 127.0.0.1 -p 5335 -u https://8.8.4.4/dns-query -u https://8.8.8.8/dns-query -u https://9.9.9.11/dns-query --fastest-addr
+ExecReload=/usr/bin/dnsproxy -l 127.0.0.1 -p 5335 -u https://8.8.4.4/dns-query -u https://1.1.1.1/dns-query -u https://9.9.9.11/dns-query --fastest-addr
 Type=simple
 
 [Install]
