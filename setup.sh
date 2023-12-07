@@ -41,8 +41,7 @@ get_arch=`arch`
     elif [[ $get_arch =~ "aarch64" ]];then
        ARCHV=arm64
     elif [[ $get_arch =~ "mips64" ]];then
-       echo "mips64 is not supported"
-       exit 1
+       ARCHV=mips64
     else
        echo "Unknown Architecture!!"
        exit 1
