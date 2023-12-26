@@ -93,8 +93,14 @@ main(){
 
 nextdns(){
     main
-    wget -O /etc/systemd/system/dnsproxy-upstream.service https://raw.githubusercontent.com/9bingyin/dnsproxy-nextdns/main/services/upstream.service
-    wget -O /etc/systemd/system/dnsproxy.service https://raw.githubusercontent.com/9bingyin/dnsproxy-nextdns/main/services/nextdns.service
+    if [ -e 文件路径 ]; then
+        echo "文件存在"
+        exit 0
+    else
+        echo "文件不存在"
+    fi
+    wget -O /etc/systemd/system/dnsproxy-upstream.service https://raw.githubusercontent.com/HynoR/dnsproxy-nextdns/main/services/upstream.service
+    wget -O /etc/systemd/system/dnsproxy.service https://raw.githubusercontent.com/HynoR/dnsproxy-nextdns/main/services/nextdns.service
     read -p "NextDNS ID：" query
     sed -i "s|dns-query|${query}|g" /etc/systemd/system/dnsproxy.service
     systemctl daemon-reload
