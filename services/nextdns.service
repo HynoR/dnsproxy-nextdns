@@ -6,9 +6,9 @@ Wants=
 Requires=
 
 [Service]
-ExecStart=/usr/bin/dnsproxy -l 127.0.0.1 -p 53 -u quic://dns-query.dns.nextdns.io --edns -f https://dns.nextdns.io/dns-query -b 127.0.0.1:5335
+ExecStart=/usr/bin/dnsproxy -l 127.0.0.1 -p 53 -u quic://dns-query.dns.nextdns.io --edns -f https://dns.nextdns.io/dns-query -b 127.0.0.1:5335  --cache --cache-min-ttl=180
 ExecStop=
-ExecReload=/usr/bin/dnsproxy -l 127.0.0.1 -p 53 -u quic://dns-query.dns.nextdns.io --edns -f https://dns.nextdns.io/dns-query -b 127.0.0.1:5335
+ExecReload=/usr/bin/dnsproxy -l 127.0.0.1 -p 53 -u quic://dns-query.dns.nextdns.io --edns -f https://dns.nextdns.io/dns-query -b 127.0.0.1:5335  --cache --cache-min-ttl=180
 Type=simple
 
 [Install]
